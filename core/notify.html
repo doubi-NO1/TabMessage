@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>frame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+</body>
+</html>
+
+<script type="text/javascript">
+    function parms(opt) {
+        var QPARM_REG = /([^&=]+)=([^&]*)/g,
+                pars = location.search.substr(1),
+                m;
+        while (m = QPARM_REG.exec(pars)) {
+            opt[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+        }
+        return opt;
+    }
+    function send(){
+        window.addEventListener('message', function(e) {
+            var data = e.data;
+            if(data && data.notification){
+                localStorage.setItem('notifydata', JSON.stringify(data));
+            }
+        });
+    }
+
+    function receive(){
+        window.addEventListener("storage",function(e){
+            if( e.key =='notifydata' && e.newValue){
+                var obj = JSON.parse(e.newValue);
+                if( obj.id != option.id && obj.notification){
+                    window.parent.postMessage( obj, '*');
+                }
+            }
+        });
+    }
+    var option =parms( { } );
+    switch(option.type){
+        case 'sender': send();break;
+        case 'receiver': receive();break;
+        default: send();receive();
+    }
+</script>
