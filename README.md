@@ -22,7 +22,7 @@
 ```bash
   node server.js
 ```
-浏览器打开两个选项卡，分别输入[http://localhost:9090/test/tab1.html](http://localhost:9090/test/tab1.html{:target="_blank"})和[http://localhost:9090/test/tab2.html](http://localhost:9090/test/tab2.html{:target="_blank"})
+浏览器打开两个选项卡，分别输入[http://localhost:9090/test/tab1.html](http://localhost:9090/test/tab1.html)和[http://localhost:9090/test/tab2.html](http://localhost:9090/test/tab2.html)
 
 ## LICENSE
 MIT
