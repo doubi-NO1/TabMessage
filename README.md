@@ -1,6 +1,6 @@
 # 简易的浏览器间通信库
 
-## 使用方法
+## 使用方法
 ### 初始化
 ```javascript
   Notify.init("../core/notify.html", null, "Duplex");
@@ -18,8 +18,7 @@
   //send内容随意，这里只做演示
   Notify.send({ from: 'which tab', message: 'your message'});
 ```
-
-## 查看示例
+## 查看示例
 ```bash
   node server.js
 ```
