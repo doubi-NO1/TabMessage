@@ -15,7 +15,7 @@
 
 ### 发送
 ```javascript
-  //send内容随意，这里只做演示
+  //send内容随意，这里只做演示
   Notify.send({ from: 'which tab', message: 'your message'});
 ```
 ## 查看示例
